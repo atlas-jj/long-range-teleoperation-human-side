@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="rosservice" type="rosservice" name="right_start" args="call --wait /stereo/right/camera/start_capture"/>
+   
+    <node name="right_republish" pkg="image_transport" type="republish" output="screen" args="compressed in:=/stereo/right/camera/image raw out:=/stereo/right/image_raw" />
+    
+</launch>
